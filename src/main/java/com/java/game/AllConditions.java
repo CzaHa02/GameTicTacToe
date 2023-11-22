@@ -1,9 +1,8 @@
 package com.java.game;
-
 import java.util.Scanner;
 
 public class AllConditions {
-
+    ScoreManager scoreManager=new ScoreManager();
     int size = new Scanner(System.in).nextInt();
     boolean ifContinue = true;
     char[][] board = new char[size][size];
@@ -20,13 +19,20 @@ public class AllConditions {
 
             if (winRow|| winColumn || winCross1||winCross2) {
                 System.out.println(turnPlayer + " you won");
+                scoreManager.addScore(String.valueOf(turnPlayer),1);
+               scoreManager.displayScores();
+
                 ifContinue = false;
+
+
             } else if (draw) {
                 System.out.println("its a draw");
                 ifContinue = false;
             }
             return true;
     }
+
+
 
 
     }

@@ -145,6 +145,7 @@ class GameApplicationTests {
        System.out.println("bad value tester");
         boolean resultBadValue=TurnMaker.makeAturn(board, 'X');
         Assert.assertEquals(false,resultBadValue);
+
        System.out.println();
     }
 }
